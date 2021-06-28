@@ -137,10 +137,68 @@ function SuppliesPage() {
                             Star San Sanitizer
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                        Our favorite sanitizer! Star San is an acid-based no-rinse sanitizer that is effective and easy to use.
+                        Our favorite sanitizer! Star San is an acid-based no-rinse sanitizer that 
+                        is effective and easy to use.
                         Made from food-grade phosphoric acid, safe for people and the environment.
                         Star San is self-foaming, which helps it to penetrate cracks and crevices.
                         Odorless and flavorless, no need to worry about tainting your beer or wine.
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <Button 
+                    size="small" 
+                    variant="outlined" 
+                    color="primary"
+                    >
+                        Learn More
+                    </Button>
+                </CardActions>
+            </Card>
+            <Card className={classes.root}>
+                <CardActionArea>
+                    <CardMedia
+                        className={classes.media}
+                        image="./images/auto-siphon.jpg"
+                        title="Homebrew Auto Siphon"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            Auto Siphon
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                        One stroke of the racking cane/piston assembly will start a siphon when immersed 
+                        in as little as six inches of beer or wine; less than six inches may require a second stroke.
+                        Includes a removable diverter tip to minimize sediment pickup. Plastic construction; can be 
+                        disassembled for cleaning. 
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <Button 
+                    size="small" 
+                    variant="outlined" 
+                    color="primary"
+                    >
+                        Learn More
+                    </Button>
+                </CardActions>
+            </Card>
+            <Card className={classes.root}>
+                <CardActionArea>
+                    <CardMedia
+                        className={classes.media}
+                        image="./images/thermometer.png"
+                        title="Homebrew Thermometer"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            Large Dial Thermometer
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                        Large, easy-to-read with 1.75" face, 8" probe. Metal clip attaches to the lip of a kettle 
+                        or mash tun for constant readings. Stainless steel, temperature range of 30-220 degrees Fahrenheit. 
+                        Does not display in Celsius. This is the type of thermometer usually used to froth/steam milk.
                         </Typography>
                     </CardContent>
                 </CardActionArea>
