@@ -1,3 +1,5 @@
+import './Dashboard.css';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -14,12 +16,6 @@ const useStyles = makeStyles({
         margin: 10,
         display: "inline-block",
     },
-    card: {
-        margin: 10,
-        height: 410,
-        width: 300,
-        display: "inline-block",
-    },
     title: {
         fontSize: 16,
     },
@@ -33,14 +29,17 @@ const useStyles = makeStyles({
 
 // function for dashboard view
 function Dashboard() {
+
     // import classes/styles from material-ui
     const classes = useStyles();
+
     return (
         <div>
-            <div>
-                <h1>Welcome to MN Brew</h1>
+            <div className="dashboard-head">
+                <h1>Welcome</h1>
                 <img src="./images/hops.png" alt="Image of Hops" />
             </div>
+            <Link to="/supplies">
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia
@@ -59,6 +58,7 @@ function Dashboard() {
                     </CardContent>
                 </CardActionArea>
             </Card>
+            </Link>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia
