@@ -19,6 +19,8 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import Dashboard from '../Dashboard/Dashboard';
+import SuppliesPage from '../SuppliesPage/SuppliesPage';
 
 import './App.css';
 
@@ -53,9 +55,16 @@ function App() {
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
-            path="/user"
+            path="/dashboard"
           >
-            <UserPage />
+            <Dashboard />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/supplies"
+          >
+            <SuppliesPage />
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -75,7 +84,7 @@ function App() {
             // - else shows LoginPage at /login
             exact
             path="/login"
-            authRedirect="/user"
+            authRedirect="/dashboard"
           >
             <LoginPage />
           </ProtectedRoute>
@@ -86,7 +95,7 @@ function App() {
             // - else shows RegisterPage at "/registration"
             exact
             path="/registration"
-            authRedirect="/user"
+            authRedirect="/dashboard"
           >
             <RegisterPage />
           </ProtectedRoute>
@@ -97,7 +106,7 @@ function App() {
             // - else shows LandingPage at "/home"
             exact
             path="/home"
-            authRedirect="/user"
+            authRedirect="/dashboard"
           >
             <LandingPage />
           </ProtectedRoute>
