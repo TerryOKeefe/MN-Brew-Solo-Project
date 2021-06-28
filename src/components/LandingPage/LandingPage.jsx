@@ -20,15 +20,12 @@ function LandingPage() {
       <div className="grid">
         <div className="grid-col grid-col_8">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus
-            ut ex molestie blandit. Etiam et turpis sit amet risus mollis
-            interdum. Suspendisse et justo vitae metus bibendum fringilla sed
-            sed justo. Aliquam sollicitudin dapibus lectus, vitae consequat odio
-            elementum eget. Praesent efficitur eros vitae nunc interdum, eu
-            interdum justo facilisis. Sed pulvinar nulla ac dignissim efficitur.
-            Quisque eget eros metus. Vestibulum bibendum fringilla nibh a
-            luctus. Duis a sapien metus.
+          When someone begins small batch (1-2 gallons) home brewing they use kits bought online or from a homebrew supply store. 
+          Those kits come with paper form instructions that often get wet, lost, and/or forgotten. That’s where MN Brew comes in. 
+          MN Brew is a web application that allows a user to store small batch (1-2 gallon) recipes digitally. The user can view small 
+          batch kit recipes found in the application, and attach notes during the brewing process. It allows the user to rate that 
+          brew for future reference or delete it from their recipe list. A user can add a new kit’s instructions which will then render
+          with the other recipes.
           </p>
 
           <p>
