@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Dashboard from '../Dashboard/Dashboard';
+import SuppliesPage from '../SuppliesPage/SuppliesPage';
 
 import './App.css';
 
@@ -57,6 +58,13 @@ function App() {
             path="/dashboard"
           >
             <Dashboard />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/supplies"
+          >
+            <SuppliesPage />
           </ProtectedRoute>
 
           <ProtectedRoute
