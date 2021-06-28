@@ -1,7 +1,12 @@
 function SuppliesPage() {
     return (
         <div>
-            <h1>Supplies</h1>
+            <div>
+                <h1>Supplies</h1>
+            </div>
+            <div>
+                
+            </div>
         </div>
     )
 } // end SuppliesPage
