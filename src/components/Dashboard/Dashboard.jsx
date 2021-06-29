@@ -1,5 +1,6 @@
 import './Dashboard.css';
 import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -33,10 +34,12 @@ function Dashboard() {
     // import classes/styles from material-ui
     const classes = useStyles();
 
+    const user = useSelector((store) => store.user);
+
     return (
         <div>
             <div className="dashboard-head">
-                <h1>Welcome</h1>
+                <h1>Welcome, {user.username}!</h1>
                 <img src="./images/hops.png" alt="Image of Hops" />
             </div>
             <Link to="/supplies">

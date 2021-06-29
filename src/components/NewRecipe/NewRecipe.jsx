@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 // function to add new recipe
 function NewRecipe() {
+
+    // setup dispatch variable
+    const dispatch = useDispatch();
     
     // local state variable to hold new inputs
     const [recipe, setRecipe] = useState({
@@ -38,6 +41,9 @@ function NewRecipe() {
 
         // console log to see data captured
         console.log('Submit button Clicked:', recipe);
+
+        // dispatch new recipe to redux
+        dispatch({type: 'ADD_RECIPE', payload: recipe});
     }
 
     return (
