@@ -74,6 +74,10 @@ function NewRecipe() {
                     <h2>Bottle Conditioning Instructions</h2>
                     <textarea placeholder="Conditioning Instructions" />
                 </div>
+                <div>
+                    <button>Cancel</button>
+                    <button>Submit Brew</button>
+                </div>
             </div>
         </div>
     )
