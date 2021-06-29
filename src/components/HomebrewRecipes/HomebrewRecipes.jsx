@@ -10,7 +10,7 @@ function HomebrewRecipes() {
     // load once and dispatch fetch_recipes
     useEffect(() => {
         dispatch({ type: 'FETCH_RECIPES' });
-    }, [];)
+    }, []);
 
     return (
         <div>
