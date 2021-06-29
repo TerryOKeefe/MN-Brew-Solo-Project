@@ -79,24 +79,26 @@ function Dashboard() {
                     </CardActionArea>
                 </Card>
             </Link>
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="./images/add-recipe.jpg"
-                        title="Homebrew Add Recipe"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Add New Recipe
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            Want to add a new recipe to your collection? 
-                            Select add new recipe to begin.
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
+            <Link to="/add">
+                <Card className={classes.root}>
+                    <CardActionArea>
+                        <CardMedia
+                            className={classes.media}
+                            image="./images/add-recipe.jpg"
+                            title="Homebrew Add Recipe"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                Add New Recipe
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                Want to add a new recipe to your collection? 
+                                Select add new recipe to begin.
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+            </Link>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia
