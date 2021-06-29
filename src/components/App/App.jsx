@@ -23,6 +23,7 @@ import Dashboard from '../Dashboard/Dashboard';
 import SuppliesPage from '../SuppliesPage/SuppliesPage';
 import HomebrewRecipes from '../HomebrewRecipes/HomebrewRecipes';
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
+import NewRecipe from '../NewRecipe/NewRecipe';
 
 import './App.css';
 
@@ -81,6 +82,13 @@ function App() {
             path="/details"
           >
             <RecipeDetails />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/add"
+          >
+            <NewRecipe />
           </ProtectedRoute>
 
           <ProtectedRoute
