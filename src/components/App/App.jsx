@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Dashboard from '../Dashboard/Dashboard';
 import SuppliesPage from '../SuppliesPage/SuppliesPage';
+import HomebrewRecipes from '../HomebrewRecipes/HomebrewRecipes';
 
 import './App.css';
 
@@ -65,6 +66,13 @@ function App() {
             path="/supplies"
           >
             <SuppliesPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/recipes"
+          >
+            <HomebrewRecipes />
           </ProtectedRoute>
 
           <ProtectedRoute
