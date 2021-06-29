@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 // function to add new recipe
 function NewRecipe() {
 
-    // setup dispatch variable
+    // setup dispatch and history variables
     const dispatch = useDispatch();
+    const history = useHistory();
     
     // local state variable to hold new inputs
     const [recipe, setRecipe] = useState({
@@ -44,6 +45,9 @@ function NewRecipe() {
 
         // dispatch new recipe to redux
         dispatch({type: 'ADD_RECIPE', payload: recipe});
+
+        // on click change to /recipes view
+        history.push('/recipes');
     }
 
     return (
