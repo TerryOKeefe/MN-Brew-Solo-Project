@@ -1,5 +1,28 @@
+import React, { useState } from 'react';
+import { useDispatch } from 'react-router-dom';
+
 // function to add new recipe
 function NewRecipe() {
+    
+    // local state variable to hold new inputs
+    const [recipe, setRecipe] = useState({
+        name: '',
+        style: '',
+        intro: '',
+        original_gravity: '',
+        ferment_time: '',
+        bottle_time: '',
+        malt_extract: '',
+        hops: '',
+        yeast: '',
+        priming_sugar: '',
+        brew_day: '',
+        fermentation: '',
+        bottling: '', 
+        conditioning: '',
+        image: '',
+    })
+
     return (
         <div>
             <div>
