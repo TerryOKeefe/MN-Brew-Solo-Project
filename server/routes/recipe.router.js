@@ -21,6 +21,20 @@ router.get('/', (req, res) => {
     })
 });
 
+router.get('/:id', (req, res) => {
+  const query = `SELECT * FROM "recipes"
+    WHERE "recipes".id = $1;`;
+  
+  pool.query(query, [req.params.id])
+    .then( (result) => {
+      res.send(result.rows);
+    })
+    .catch( (error) => {
+      res.sendStatus(500);
+      console.log();
+    })
+})
+
 /**
  * POST route template
  */

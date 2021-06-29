@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -41,6 +42,15 @@ function HomebrewRecipes() {
     const recipes = useSelector(store => store.recipe)
     console.log('From redux store:', recipes);
 
+    // function to handle click
+    const handleClick = (recipe) => {
+        // console log to see recipe click fired
+        console.log('Clicked recipe', recipe);
+
+        // dispatch recipe details
+        dispatch({ type: 'GET_DETAILS', payload: recipe });
+    }
+
     // load once and dispatch fetch_recipes
     useEffect(() => {
         dispatch({ type: 'FETCH_RECIPES' });
@@ -72,6 +82,18 @@ function HomebrewRecipes() {
                                         Avg. Rating {recipe.rating}
                                     </Typography>
                                 </CardContent>
+                                <CardActions>
+                                    <Link to="/details">
+                                        <Button
+                                            size="small"
+                                            color="primary"
+                                            variant="outlined"
+                                            onClick={() => {handleClick(recipe)}}
+                                        >
+                                            See Recipe
+                                        </Button>
+                                    </Link>
+                                </CardActions>
                             </CardActionArea>
                         </Card>
                     )
