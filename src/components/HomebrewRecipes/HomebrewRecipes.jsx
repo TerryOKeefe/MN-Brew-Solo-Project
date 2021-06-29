@@ -7,6 +7,10 @@ function HomebrewRecipes() {
     // set dispatch variable
     const dispatch = useDispatch();
 
+    // get recipes from the redux store
+    const recipes = useSelector(store => store.recipe)
+    console.log('From redux store:', recipes);
+
     // load once and dispatch fetch_recipes
     useEffect(() => {
         dispatch({ type: 'FETCH_RECIPES' });
