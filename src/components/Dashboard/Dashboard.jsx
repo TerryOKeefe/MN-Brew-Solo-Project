@@ -40,43 +40,45 @@ function Dashboard() {
                 <img src="./images/hops.png" alt="Image of Hops" />
             </div>
             <Link to="/supplies">
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="./images/homebrew-starter.jpg"
-                        title="Homebrew Supplies"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Supplies
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            General brewing supplies needed to get started. 
-                            These supplies are for small batch brewing 1-2 gallons.
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
+                <Card className={classes.root}>
+                    <CardActionArea>
+                        <CardMedia
+                            className={classes.media}
+                            image="./images/homebrew-starter.jpg"
+                            title="Homebrew Supplies"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                Supplies
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                General brewing supplies needed to get started. 
+                                These supplies are for small batch brewing 1-2 gallons.
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
             </Link>
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="./images/brew-recipe-image.jpg"
-                        title="Homebrew Recipes"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Homebrew Recipes
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            Collection of recipes to get you started. Select a recipe that 
-                            corresponds to the kit you purchased.
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
+            <Link to="/recipes">
+                <Card className={classes.root}>
+                    <CardActionArea>
+                        <CardMedia
+                            className={classes.media}
+                            image="./images/brew-recipe-image.jpg"
+                            title="Homebrew Recipes"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                Homebrew Recipes
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                Collection of recipes to get you started. Select a recipe that 
+                                corresponds to the kit you purchased.
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+            </Link>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia

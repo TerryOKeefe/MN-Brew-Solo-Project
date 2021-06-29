@@ -41,7 +41,7 @@ function SuppliesPage() {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image="./images/homebrew-starter.jpg"
+                        image="images/homebrew-starter.jpg"
                         title="Homebrew Starter"
                     />
                     <CardContent>
@@ -71,7 +71,7 @@ function SuppliesPage() {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image="./images/kettle.jpg"
+                        image="images/kettle.jpg"
                         title="Homebrew Kettle"
                     />
                     <CardContent>
@@ -100,7 +100,7 @@ function SuppliesPage() {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image="./images/bottles.jpg"
+                        image="images/bottles.jpg"
                         title="Homebrew Bottles"
                     />
                     <CardContent>
@@ -129,7 +129,7 @@ function SuppliesPage() {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image="./images/sanitizer.jpg"
+                        image="images/sanitizer.jpg"
                         title="Homebrew Sanitizer"
                     />
                     <CardContent>
@@ -159,7 +159,7 @@ function SuppliesPage() {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image="./images/auto-siphon.jpg"
+                        image="images/auto-siphon.jpg"
                         title="Homebrew Auto Siphon"
                     />
                     <CardContent>
@@ -188,7 +188,7 @@ function SuppliesPage() {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image="./images/thermometer.png"
+                        image="images/thermometer.png"
                         title="Homebrew Thermometer"
                     />
                     <CardContent>
