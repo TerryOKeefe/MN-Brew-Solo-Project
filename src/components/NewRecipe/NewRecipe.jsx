@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-router-dom';
 
 // function to add new recipe
@@ -9,7 +10,7 @@ function NewRecipe() {
         name: '',
         style: '',
         intro: '',
-        original_gravity: '',
+        original_gravity: null,
         ferment_time: '',
         bottle_time: '',
         malt_extract: '',
@@ -21,64 +22,136 @@ function NewRecipe() {
         bottling: '', 
         conditioning: '',
         image: '',
-    })
+        user_id: null,
+    });
+
+    // function to set new values for recipe
+    const handleInputs = (key, value) => {
+        // set recipe object with key and values from form
+        setRecipe({...recipe,
+        [key]: value,
+        })
+    } // end handleInputs
+
 
     return (
         <div>
             <div>
                 <h1>Add New Recipe</h1>
             </div>
-            <div>
+            <form>
                 <div>
                     <h2>Brew Name & Style</h2>
-                    <input placeholder="Brew Name" />
-                    <input placeholder="Style" />
+                    <input
+                        type="text"
+                        placeholder="Brew Name"
+                        onChange={(event) => handleInputs('name', event.target.value)}
+                    />
+                    <input 
+                        type="text"
+                        placeholder="Style"
+                        onChange={(event) => handleInputs('style', event.target.value)}
+                    />
                 </div>
                 <div>
                     <h2>Image of Kit</h2>
-                    <input placeholder="Image URL"/>
+                    <input
+                        type="text"
+                        placeholder="Image URL"
+                        onChange={(event) => handleInputs('image', event.target.value)}
+                    />
                 </div>
                 <div>
                     <h2>Starting Gravity</h2>
-                    <input placeholder="Original Gravity" />
+                    <input 
+                        type="number"
+                        placeholder="Original Gravity" 
+                        onChange={(event) => handleInputs('original_gravity', event.target.value)}
+                    />
                 </div>
                 <div>
                     <h2>Fermentation & Bottling Time</h2>
-                    <input placeholder="Fermentation Time" />
-                    <input placeholder="Bottling Time" />
+                    <input
+                        type="text" 
+                        placeholder="Fermentation Time" 
+                        onChange={(event) => handleInputs('ferment_time', event.target.value)}
+                    />
+                    <input
+                        type="text" 
+                        placeholder="Bottling Time"
+                        onChange={(event) => handleInputs('bottle_time', event.target.value)}
+                    />
                 </div>
                 <div>
                     <h2>Ingredients</h2>
-                    <input placeholder="Malt Extract" />
-                    <input placeholder="Hops" />
-                    <input placeholder="Yeast" />
-                    <input placeholder="Priming Sugar" />
+                    <input 
+                        type="text"
+                        placeholder="Malt Extract" 
+                        onChange={(event) => handleInputs('malt_extract', event.target.value)}
+                    />
+                    <input 
+                        type="text"
+                        placeholder="Hops"
+                        onChange={(event) => handleInputs('hops', event.target.value)} 
+                    />
+                    <input 
+                        type="text"
+                        placeholder="Yeast" 
+                        onChange={(event) => handleInputs('yeast', event.target.value)}
+                    />
+                    <input 
+                        type="text"
+                        placeholder="Priming Sugar"
+                        onChange={(event) => handleInputs('priming_sugar', event.target.value)} 
+                    />
                 </div>
                 <div>
                     <h2>Description of Brew</h2>
-                    <textarea placeholder="Intro" />
+                    <textarea
+                        type="text" 
+                        placeholder="Intro"
+                        onChange={(event) => handleInputs('intro', event.target.value)} 
+                    />
                 </div>
                 <div>
                     <h2>Brew Day Instructions</h2>
-                    <textarea placeholder="Brew Day Instructions" />
+                    <textarea
+                        type="text" 
+                        placeholder="Brew Day Instructions" 
+                        onChange={(event) => handleInputs('brew_day', event.target.value)}
+                    />
                 </div>
                 <div>
                     <h2>Fermentation Instructions</h2>
-                    <textarea placeholder="Fermentation Instructions" />
+                    <textarea 
+                        type="text"
+                        placeholder="Fermentation Instructions"
+                        onChange={(event) => handleInputs('fermentation', event.target.value)} 
+                    />
                 </div>
                 <div>
                     <h2>Bottling Instructions</h2>
-                    <textarea placeholder="Bottling Instructions" />
+                    <textarea 
+                        type="text"
+                        placeholder="Bottling Instructions"
+                        onChange={(event) => handleInputs('bottling', event.target.value)} 
+                    />
                 </div>
                 <div>
                     <h2>Bottle Conditioning Instructions</h2>
-                    <textarea placeholder="Conditioning Instructions" />
+                    <textarea 
+                        type="text"
+                        placeholder="Conditioning Instructions" 
+                        onChange={(event) => handleInputs('conditioning', event.target.value)}
+                    />
                 </div>
                 <div>
-                    <button>Cancel</button>
+                    <Link to="/dashboard">
+                        <button>Cancel</button>
+                    </Link>
                     <button>Submit Brew</button>
                 </div>
-            </div>
+            </form>
         </div>
     )
 } // end NewRecipe
