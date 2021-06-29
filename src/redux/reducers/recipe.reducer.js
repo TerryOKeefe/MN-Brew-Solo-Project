@@ -1,5 +1,5 @@
 // reducer for recipes from database
-const recipeReducer = (state = {}, action) => {
+const recipeReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_RECIPES':
             return action.payload;
