@@ -33,6 +33,12 @@ function NewRecipe() {
         })
     } // end handleInputs
 
+    const handleClick = (event) => {
+        event.preventDefault();
+
+        // console log to see data captured
+        console.log('Submit button Clicked:', recipe);
+    }
 
     return (
         <div>
@@ -149,7 +155,11 @@ function NewRecipe() {
                     <Link to="/dashboard">
                         <button>Cancel</button>
                     </Link>
-                    <button>Submit Brew</button>
+                    <button
+                        onClick={handleClick}
+                    >
+                        Submit Brew
+                    </button>
                 </div>
             </form>
         </div>
