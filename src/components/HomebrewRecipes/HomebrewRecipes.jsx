@@ -49,7 +49,18 @@ function HomebrewRecipes() {
 
         // dispatch recipe details
         dispatch({ type: 'GET_DETAILS', payload: recipe });
-    }
+
+    } // end handleClick
+
+    // function to handle delete
+    const handleDelete = (recipe) => {
+        // console log to see delete btn fires
+        console.log('Clicked Delete', recipe);
+        
+        // dispatch 'DELETE'
+        dispatch({type: 'DELETE', payload: recipe})
+        
+    } // end handleDelete
 
     // load once and dispatch fetch_recipes
     useEffect(() => {
@@ -93,6 +104,14 @@ function HomebrewRecipes() {
                                             See Recipe
                                         </Button>
                                     </Link>
+                                    <Button
+                                            size="small"
+                                            color="secondary"
+                                            variant="outlined"
+                                            onClick={() => {handleDelete(recipe)}}
+                                        >
+                                            Delete
+                                    </Button>
                                 </CardActions>
                             </CardActionArea>
                         </Card>
