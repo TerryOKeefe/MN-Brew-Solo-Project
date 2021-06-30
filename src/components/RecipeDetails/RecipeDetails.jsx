@@ -22,7 +22,7 @@ function RecipeDetails() {
                                 <h1>{detail.name}</h1>
                             </div>
                             <div>
-                                <h3>{detail.intro}</h3>
+                                <h4>{detail.intro}</h4>
                             </div>
                             <div>
                                 <h4>Original Gravity: {detail.original_gravity}</h4> 

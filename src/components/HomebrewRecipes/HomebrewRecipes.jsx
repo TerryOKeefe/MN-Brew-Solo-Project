@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,6 +9,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Rating from '@material-ui/lab/Rating';
+import Box from '@material-ui/core/Box';
 
 // setup material-ui style
 const useStyles = makeStyles({
@@ -40,7 +42,11 @@ function HomebrewRecipes() {
 
     // get recipes from the redux store
     const recipes = useSelector(store => store.recipe)
-    console.log('From redux store:', recipes);
+
+    // local state to hold rating
+    const [value, setValue] = useState(0);
+
+    console.log('Rating Value', value);
 
     // function to handle click
     const handleClick = (recipe) => {
@@ -56,11 +62,21 @@ function HomebrewRecipes() {
     const handleDelete = (recipe) => {
         // console log to see delete btn fires
         console.log('Clicked Delete', recipe);
-        
+
         // dispatch 'DELETE'
-        dispatch({type: 'DELETE', payload: recipe})
-        
+        dispatch({ type: 'DELETE', payload: recipe })
+
     } // end handleDelete
+
+    // function to handle edit
+    const handleEdit = (newValue) => {
+        // console log to show value captured from rating
+        console.log('Clicked Rating', newValue);
+
+        // dispatch 'EDIT_RATING'
+        dispatch({type: 'EDIT_RATING', payload: newValue})
+    }
+    
 
     // load once and dispatch fetch_recipes
     useEffect(() => {
@@ -89,9 +105,19 @@ function HomebrewRecipes() {
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {recipe.style}
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    {/* <Typography variant="body2" color="textSecondary" component="p">
                                         Avg. Rating {recipe.rating}
-                                    </Typography>
+                                    </Typography> */}
+                                    <Box component="fieldset" mb={1} borderColor="transparent">
+                                        <Typography component="legend">Brew Rating: {value}</Typography>
+                                        <Rating
+                                            name="simple-controlled"
+                                            value={value}
+                                            onChange={(event, newValue) => {
+                                                handleEdit(newValue);
+                                            }}
+                                        />
+                                    </Box>
                                 </CardContent>
                                 <CardActions>
                                     <Link to="/details">
@@ -99,18 +125,18 @@ function HomebrewRecipes() {
                                             size="small"
                                             color="primary"
                                             variant="outlined"
-                                            onClick={() => {handleClick(recipe)}}
+                                            onClick={() => { handleClick(recipe) }}
                                         >
                                             See Recipe
                                         </Button>
                                     </Link>
                                     <Button
-                                            size="small"
-                                            color="secondary"
-                                            variant="outlined"
-                                            onClick={() => {handleDelete(recipe)}}
-                                        >
-                                            Delete
+                                        size="small"
+                                        color="secondary"
+                                        variant="outlined"
+                                        onClick={() => { handleDelete(recipe) }}
+                                    >
+                                        Delete
                                     </Button>
                                 </CardActions>
                             </CardActionArea>
