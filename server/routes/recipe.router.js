@@ -33,13 +33,13 @@ router.get('/:id', (req, res) => {
       res.sendStatus(500);
       console.log();
     })
-})
+}); 
 
 /**
  * POST route template
  */
 router.post('/', (req, res) => {
-  console.log(req.body);
+  console.log('New Recipe Added:', req.body);
 
   const addQuery = `INSERT INTO "recipes" ("name", "style", "intro", "original_gravity", 
     "ferment_time", "bottle_time", "malt_extract", "hops", "yeast", "priming_sugar", "brew_day", 
@@ -70,6 +70,30 @@ router.post('/', (req, res) => {
     console.log('Error in POST', error);
     res.sendStatus(500);
   })
+});
+
+router.delete('/:id', (req, res) => {
+  // console log id being deleted
+  console.log('Deleted Recipe', req.params.id);
+  // set req.params to variable
+  const itemToDelete = req.params.id;
+
+  // query text to send to sql
+  const deleteQuery = `DELETE FROM "public"."recipes" WHERE "id"=$1;`;
+
+  pool.query(deleteQuery, [itemToDelete])
+    .then( (result) => {
+      // console log to show id of target item
+      console.log(`Deleted recipe with id ${itemToDelete}`);
+      // send back an OK status
+      res.sendStatus(200);
+    })
+    .catch( (error) => {
+      // console log error
+      console.log('Error in Delete Router', error);
+      // send back a 500 status
+      res.sendStatus(500);
+    })
 });
 
 module.exports = router;
