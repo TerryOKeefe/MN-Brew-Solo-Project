@@ -19,7 +19,7 @@ function* deleteRecipe(action) {
 } // end deleteRecipe
 
 function* deleteSaga() {
-    yield takeLatest('DELETE', deleteRecipe)
+    yield takeLatest('DELETE', deleteRecipe);
 } // end deleteSaga
 
 // export deleteSaga

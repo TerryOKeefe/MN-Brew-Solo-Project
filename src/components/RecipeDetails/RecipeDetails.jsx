@@ -1,12 +1,25 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 // function for recipe details page
 function RecipeDetails() {
+
+    // set dispatch variable
+    const dispatch = useDispatch();
 
     // get details from the redux store 
     const details = useSelector(store => store.details)
     // console log to see data from redux store
     console.log('Details:', details);
+
+    const handleClick = (detail) => {
+        // console log to see data passed in
+        console.log('Clicked Add Note', detail);
+
+        // dispatch details to 'EDIT_RECIPE'
+        dispatch({ type: 'EDIT_RECIPE', payload: detail});
+        
+    }
 
     return (
         <div>
@@ -16,6 +29,9 @@ function RecipeDetails() {
                     return (
                         <div>
                             <div>
+                                <button
+                                    onClick={() => handleClick(detail)}
+                                >Edit</button>
                                 <img src={detail.image} />
                             </div>
                             <div>

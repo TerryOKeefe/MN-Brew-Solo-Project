@@ -46,8 +46,6 @@ function HomebrewRecipes() {
     // local state to hold rating
     const [value, setValue] = useState(0);
 
-    console.log('Rating Value', value);
-
     // function to handle click
     const handleClick = (recipe) => {
         // console log to see recipe click fired
@@ -68,14 +66,14 @@ function HomebrewRecipes() {
 
     } // end handleDelete
 
-    // function to handle edit
-    const handleEdit = (newValue) => {
-        // console log to show value captured from rating
-        console.log('Clicked Rating', newValue);
+    // // function to handle edit
+    // const handleEdit = (newValue) => {
+    //     // console log to show value captured from rating
+    //     console.log('Clicked Rating', newValue);
 
-        // dispatch 'EDIT_RATING'
-        dispatch({type: 'EDIT_RATING', payload: newValue})
-    }
+    //     // dispatch 'EDIT_RATING'
+    //     dispatch({type: 'EDIT_RATING', payload: newValue});
+    // } // end handleEdit
     
 
     // load once and dispatch fetch_recipes
@@ -109,12 +107,12 @@ function HomebrewRecipes() {
                                         Avg. Rating {recipe.rating}
                                     </Typography> */}
                                     <Box component="fieldset" mb={1} borderColor="transparent">
-                                        <Typography component="legend">Brew Rating: {value}</Typography>
+                                        <Typography component="legend">Brew Rating: </Typography>
                                         <Rating
                                             name="simple-controlled"
                                             value={value}
                                             onChange={(event, newValue) => {
-                                                handleEdit(newValue);
+                                                setValue(newValue);
                                             }}
                                         />
                                     </Box>

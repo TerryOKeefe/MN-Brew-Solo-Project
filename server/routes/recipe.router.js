@@ -108,4 +108,9 @@ router.delete('/:id', (req, res) => {
     })
 }); // end DELETE
 
+// PUT
+router.put('/:id', (req, res) => {
+  const updateItem = req.params.id
+})
+
 module.exports = router;
