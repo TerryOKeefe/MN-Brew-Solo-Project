@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 // function for recipe details page
 function RecipeDetails() {
 
-    // set dispatch variable
+    // set dispatch and history variable
     const dispatch = useDispatch();
+    const history = useHistory();
 
     // get details from the redux store 
     const details = useSelector(store => store.details)
@@ -18,6 +19,9 @@ function RecipeDetails() {
 
         // dispatch details to 'EDIT_RECIPE'
         dispatch({ type: 'EDIT_RECIPE', payload: detail});
+
+        // navigate to edit page
+        history.push('/edit')
         
     }
 
