@@ -3,31 +3,40 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function EditRecipe() {
-
+    
+    // set dispatch and history variable
     const dispatch = useDispatch();
+    const history = useHistory();
 
     // get edit details from redux store
     const editRecipe = useSelector(store => store.edit)
     // console log to see data
     console.log('Edit details', editRecipe);
 
-
+    // function to handle change
     const handleChange = (event) => {
+        // dispatch changes
         dispatch({
             type: 'EDIT_ONCHANGE',
             payload: { key: event.target.name, value: event.target.value }
         })
     } // end handleChange
 
+    // function to handle submit
     const handleSubmit = (event) => {
         event.preventDefault();
         // console log submit button clicked
         console.log('Submit Edit Clicked', editRecipe);
+
+        // dispatch edit data
         dispatch({
             type: 'SUBMIT_EDIT',
             payload: editRecipe
         })
-    }
+
+        // navigate to recipes page
+        history.push('/recipes');
+    } // end handleSubmit
 
     return (
         <div>

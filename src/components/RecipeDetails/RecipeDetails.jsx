@@ -21,8 +21,7 @@ function RecipeDetails() {
         dispatch({ type: 'EDIT_RECIPE', payload: detail});
 
         // navigate to edit page
-        history.push('/edit');
-        
+        history.push('/edit'); 
     }
 
     return (
