@@ -13,9 +13,9 @@ function EditRecipe() {
 
 
     const handleChange = (event) => {
-        dispatch({ 
+        dispatch({
             type: 'EDIT_ONCHANGE',
-            payload: {key: event.target.name, value: event.target.value}
+            payload: { key: event.target.name, value: event.target.value }
         })
     } // end handleChange
 
@@ -46,90 +46,132 @@ function EditRecipe() {
                 </div>
                 <div>
                     <input
+                        name="style"
+                        type="text"
                         value={editRecipe.style}
-                        onChange={(event) => handleChange('style', event.target.value)}
+                        placeholder="style"
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <input
+                        name="image"
+                        type="text"
+                        placeholder="image"
                         value={editRecipe.image}
-                        onChange={(event) => handleChange('image', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <input
+                        name="original_gravity"
+                        type="number"
+                        placeholder="original gravity"
                         value={editRecipe.original_gravity}
-                        onChange={(event) => handleChange('original_gravity', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <input
+                        name="ferment_time"
+                        type="text"
+                        placeholder="ferment time"
                         value={editRecipe.ferment_time}
-                        onChange={(event) => handleChange('ferment_time', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <input
+                        name="bottle_time"
+                        type="text"
+                        placeholder="bottle time"
                         value={editRecipe.bottle_time}
-                        onChange={(event) => handleChange('bottle_time', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <input
+                        name="malt_extract"
+                        type="text"
+                        placeholder="malt extract"
                         value={editRecipe.malt_extract}
-                        onChange={(event) => handleChange('malt_extract', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <input
+                        name="hops"
+                        type="text"
+                        placeholder="hops"
                         value={editRecipe.hops}
-                        onChange={(event) => handleChange('hops', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <input
+                        name="yeast"
+                        type="text"
+                        placeholder="yeast"
                         value={editRecipe.yeast}
-                        onChange={(event) => handleChange('yeast', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <input
+                        name="priming_sugar"
+                        type="text"
+                        placeholder="priming sugar"
                         value={editRecipe.priming_sugar}
-                        onChange={(event) => handleChange('priming_sugar', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <textarea
+                        name="intro"
+                        type="text"
+                        placeholder="intro"
                         value={editRecipe.intro}
-                        onChange={(event) => handleChange('intro', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <textarea
+                        name="brew_day"
+                        type="text"
+                        placeholder="brew day"
                         value={editRecipe.brew_day}
-                        onChange={(event) => handleChange('brew_day', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <textarea
+                        name="fermentation"
+                        type="text"
+                        placeholder="fermentation"
                         value={editRecipe.fermentation}
-                        onChange={(event) => handleChange('fermentation', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <textarea
+                        name="bottling"
+                        type="text"
+                        placeholder="bottling"
                         value={editRecipe.bottling}
-                        onChange={(event) => handleChange('bottling', event.target.value)} 
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
                     <textarea
+                        name="conditioning"
+                        type="text"
+                        placeholder="conditioning"
                         value={editRecipe.conditioning}
-                        onChange={(event) => handleChange('conditioning', event.target.value)}
+                        onChange={(event) => handleChange(event)}
                     />
                 </div>
                 <div>
-                    <input type="submit"/>
+                    <input type="submit" />
                 </div>
             </form>
         </div>

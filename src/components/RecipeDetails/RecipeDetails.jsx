@@ -40,6 +40,7 @@ function RecipeDetails() {
                             </div>
                             <div>
                                 <h1>{detail.name}</h1>
+                                <h3>{detail.style}</h3>
                             </div>
                             <div>
                                 <h4>{detail.intro}</h4>
