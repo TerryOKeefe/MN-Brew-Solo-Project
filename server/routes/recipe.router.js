@@ -108,4 +108,44 @@ router.delete('/:id', (req, res) => {
     })
 }); // end DELETE
 
+// PUT
+router.put('/:id', (req, res) => {
+  const updateItem = req.params.id;
+  const newValue = req.body.value
+  const editQuery = `UPDATE "recipes" SET "name" = $1, "style" =$2, "intro" = $3, "original_gravity" =$4, 
+  "ferment_time"= $5, "bottle_time" = $6, "malt_extract" =$7, "hops" = $8, "yeast"=$9, "priming_sugar"=$10, "brew_day"=$11, 
+  "fermentation"=$12, "bottling"=$13, "conditioning"=$14, "image"=$15, "user_id"=$16 
+  WHERE "recipes".id = $17 `;
+
+  pool.query(editQuery, [
+    req.body.name, 
+    req.body.style, 
+    req.body.intro, 
+    req.body.original_gravity, 
+    req.body.ferment_time, 
+    req.body.bottle_time, 
+    req.body.malt_extract, 
+    req.body.hops, 
+    req.body.yeast, 
+    req.body.priming_sugar, 
+    req.body.brew_day, 
+    req.body.fermentation, 
+    req.body.bottling, 
+    req.body.conditioning, 
+    req.body.image, 
+    req.user.id,
+    req.body.id
+  ])
+  .then( (result) => {
+    // send created status
+    res.sendStatus(201);
+  })
+  .catch( (error) => {
+    // console log error
+    console.log('Error in PUT', error);
+    // send 500 status
+    res.sendStatus(500);
+  })
+})
+
 module.exports = router;

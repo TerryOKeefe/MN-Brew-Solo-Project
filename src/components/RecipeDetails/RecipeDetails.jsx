@@ -1,12 +1,28 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 // function for recipe details page
 function RecipeDetails() {
+
+    // set dispatch and history variable
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     // get details from the redux store 
     const details = useSelector(store => store.details)
     // console log to see data from redux store
     console.log('Details:', details);
+
+    const handleClick = (detail) => {
+        // console log to see data passed in
+        console.log('Clicked Edit Recipe', detail);
+
+        // dispatch details to 'EDIT_RECIPE'
+        dispatch({ type: 'EDIT_RECIPE', payload: detail});
+
+        // navigate to edit page
+        history.push('/edit'); 
+    }
 
     return (
         <div>
@@ -16,13 +32,17 @@ function RecipeDetails() {
                     return (
                         <div>
                             <div>
+                                <button
+                                    onClick={() => handleClick(detail)}
+                                >Edit</button>
                                 <img src={detail.image} />
                             </div>
                             <div>
                                 <h1>{detail.name}</h1>
+                                <h3>{detail.style}</h3>
                             </div>
                             <div>
-                                <h3>{detail.intro}</h3>
+                                <h4>{detail.intro}</h4>
                             </div>
                             <div>
                                 <h4>Original Gravity: {detail.original_gravity}</h4> 
