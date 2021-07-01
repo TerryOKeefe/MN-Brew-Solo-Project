@@ -15,13 +15,13 @@ function RecipeDetails() {
 
     const handleClick = (detail) => {
         // console log to see data passed in
-        console.log('Clicked Add Note', detail);
+        console.log('Clicked Edit Recipe', detail);
 
         // dispatch details to 'EDIT_RECIPE'
         dispatch({ type: 'EDIT_RECIPE', payload: detail});
 
         // navigate to edit page
-        history.push('/edit')
+        history.push('/edit');
         
     }
 
