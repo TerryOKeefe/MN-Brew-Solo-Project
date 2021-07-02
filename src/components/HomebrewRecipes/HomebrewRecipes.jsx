@@ -41,8 +41,9 @@ function HomebrewRecipes() {
     // set dispatch variable
     const dispatch = useDispatch();
 
-    // get recipes from the redux store
+    // get recipes and user from the redux store
     const recipes = useSelector(store => store.recipe)
+    const user = useSelector((store) => store.user);
 
     // local state to hold rating
     const [value, setValue] = useState(0);
@@ -113,9 +114,9 @@ function HomebrewRecipes() {
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {recipe.style}
                                     </Typography>
-                                    {/* <Typography variant="body2" color="textSecondary" component="p">
-                                        Avg. Rating {recipe.rating}
-                                    </Typography> */}
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        created by {user.username}
+                                    </Typography>
                                     <Box component="fieldset" mb={1} borderColor="transparent">
                                         <Typography component="legend"></Typography>
                                         <Rating
