@@ -15,8 +15,9 @@ import Box from '@material-ui/core/Box';
 // setup material-ui style
 const useStyles = makeStyles({
     root: {
-        minWidth: 100,
-        maxWidth: 300,
+        minWidth: 350,
+        maxWidth: 350,
+        height: 420,
         margin: 10,
         display: "inline-block",
     },
@@ -27,7 +28,7 @@ const useStyles = makeStyles({
         marginBottom: 12,
     },
     media: {
-        height: 140,
+        height: 200,
     },
 });
 
@@ -66,6 +67,12 @@ function HomebrewRecipes() {
 
     } // end handleDelete
 
+    // function to direct user to purchase page
+    const routeChange = () => {
+        // on click new window opens
+        window.open('https://www.northernbrewer.com/collections/small-batch-kits/products/summer-squeeze-lemon-shandy-one-gallon-recipe-kit');
+    } // end routeChange
+
     // // function to handle edit
     // const handleEdit = (newValue) => {
     //     // console log to show value captured from rating
@@ -89,7 +96,10 @@ function HomebrewRecipes() {
             <div>
                 {recipes.map((recipe) => {
                     return (
-                        <Card className={classes.root} key={recipe.id}>
+                        <Card 
+                            style={{backgroundColor: "lightgrey"}}
+                            className={classes.root} 
+                            key={recipe.id}>
                             <CardActionArea>
                                 <CardMedia
                                     className={classes.media}
@@ -107,7 +117,7 @@ function HomebrewRecipes() {
                                         Avg. Rating {recipe.rating}
                                     </Typography> */}
                                     <Box component="fieldset" mb={1} borderColor="transparent">
-                                        <Typography component="legend">Brew Rating: </Typography>
+                                        <Typography component="legend"></Typography>
                                         <Rating
                                             name="simple-controlled"
                                             value={value}
@@ -128,6 +138,14 @@ function HomebrewRecipes() {
                                             See Recipe
                                         </Button>
                                     </Link>
+                                    <Button
+                                            size="small"
+                                            color="primary"
+                                            variant="outlined"
+                                            onClick={routeChange}
+                                        >
+                                            Buy Kit
+                                    </Button>
                                     <Button
                                         size="small"
                                         color="secondary"

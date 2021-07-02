@@ -115,8 +115,12 @@ function Dashboard() {
                             My Created Brews
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            All data on the brews you have created. Bottling day, beer name, 
-                            and brew style can be found here.
+                            {/* All data on the brews you have created. Bottling day, beer name, 
+                            and brew style can be found here. */}
+                            *** COMING SOON ***
+                            <br></br>
+                            <br></br>
+                            Construction in progress
                         </Typography>
                     </CardContent>
                 </CardActionArea>

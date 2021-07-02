@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -32,6 +33,11 @@ function SuppliesPage() {
     // import classes/styles from material-ui
     const classes = useStyles();
 
+    // function to open new tab and take to route
+    const routeChange = () => {
+       window.open('https://www.northernbrewer.com/products/craft-beer-making-kit-with-siphonless-fermenter-1-gallon');
+    }
+
     return (
         <div>
             <div>
@@ -62,8 +68,9 @@ function SuppliesPage() {
                     size="small" 
                     variant="outlined" 
                     color="primary"
+                    onClick={routeChange}
                     >
-                        Learn More
+                        Purchase
                     </Button>
                 </CardActions>
             </Card>
@@ -92,7 +99,7 @@ function SuppliesPage() {
                     variant="outlined" 
                     color="primary"
                     >
-                        Learn More
+                        Purchase
                     </Button>
                 </CardActions>
             </Card>
@@ -121,7 +128,7 @@ function SuppliesPage() {
                     variant="outlined" 
                     color="primary"
                     >
-                        Learn More
+                        Purchase
                     </Button>
                 </CardActions>
             </Card>
@@ -151,7 +158,7 @@ function SuppliesPage() {
                     variant="outlined" 
                     color="primary"
                     >
-                        Learn More
+                        Purchase
                     </Button>
                 </CardActions>
             </Card>
@@ -180,7 +187,7 @@ function SuppliesPage() {
                     variant="outlined" 
                     color="primary"
                     >
-                        Learn More
+                        Purchase
                     </Button>
                 </CardActions>
             </Card>
@@ -208,7 +215,7 @@ function SuppliesPage() {
                     variant="outlined" 
                     color="primary"
                     >
-                        Learn More
+                        Purchase
                     </Button>
                 </CardActions>
             </Card>
