@@ -1,8 +1,25 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles((theme) => ({
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    textField: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
+        width: 200,
+    },
+}));
 
 // function for recipe details page
 function RecipeDetails() {
+
+    // variable for class styles 
+    const classes = useStyles();
 
     // set dispatch and history variable
     const dispatch = useDispatch();
@@ -18,10 +35,10 @@ function RecipeDetails() {
         console.log('Clicked Edit Recipe', detail);
 
         // dispatch details to 'EDIT_RECIPE'
-        dispatch({ type: 'EDIT_RECIPE', payload: detail});
+        dispatch({ type: 'EDIT_RECIPE', payload: detail });
 
         // navigate to edit page
-        history.push('/edit'); 
+        history.push('/edit');
     }
 
     return (
@@ -45,7 +62,7 @@ function RecipeDetails() {
                                 <h4>{detail.intro}</h4>
                             </div>
                             <div>
-                                <h4>Original Gravity: {detail.original_gravity}</h4> 
+                                <h4>Original Gravity: {detail.original_gravity}</h4>
                                 <h4>Brew Time: {detail.ferment_time} | {detail.bottle_time}</h4>
                             </div>
                             <div>
@@ -80,8 +97,19 @@ function RecipeDetails() {
                                 ></textarea>
                             </div>
                             <div>
-                            <button>Add Notes</button>
+                                <button>Add Notes</button>
                             </div>
+                            <form className={classes.container} noValidate>
+                                <TextField
+                                    id="date"
+                                    label="Select Bottle Day"
+                                    type="date"
+                                    className={classes.textField}
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}
+                                />
+                            </form>
                         </div>
                     )
                 })}
