@@ -74,6 +74,13 @@ function RecipeDetails() {
                             <div>
                                 <h2>Brewer's Notes</h2>
                                 <h4>{detail.notes}</h4>
+                                <textarea
+                                    placeholder="notes"
+
+                                ></textarea>
+                            </div>
+                            <div>
+                            <button>Add Notes</button>
                             </div>
                         </div>
                     )

@@ -44,6 +44,7 @@ function HomebrewRecipes() {
     // get recipes and user from the redux store
     const recipes = useSelector(store => store.recipe)
     const user = useSelector((store) => store.user);
+    console.log('user', user);
 
     // local state to hold rating
     const [value, setValue] = useState(0);
@@ -115,7 +116,7 @@ function HomebrewRecipes() {
                                         {recipe.style}
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                        created by {user.username}
+                                        created by {recipe.username}
                                     </Typography>
                                     <Box component="fieldset" mb={1} borderColor="transparent">
                                         <Typography component="legend"></Typography>

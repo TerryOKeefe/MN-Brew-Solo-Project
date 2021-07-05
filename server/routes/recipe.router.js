@@ -6,7 +6,8 @@ const router = express.Router();
 router.get('/', (req, res) => {
   
   // query text to send to database
-  const query = `SELECT * FROM "recipes" ORDER BY "id" ASC;`;
+  const query = `SELECT * FROM "recipes" 
+  ORDER BY "recipes".id ASC;`;
 
   pool.query(query)
     .then( (result) => {
@@ -91,7 +92,7 @@ router.delete('/:id', (req, res) => {
   const itemToDelete = req.params.id;
 
   // query text to send to sql
-  const deleteQuery = `DELETE FROM "public"."recipes" WHERE "id"=$1;`;
+  const deleteQuery = `DELETE FROM "recipes" WHERE id =$1;`;
 
   pool.query(deleteQuery, [itemToDelete])
     .then( (result) => {
