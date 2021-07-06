@@ -103,28 +103,30 @@ function Dashboard() {
                     </CardActionArea>
                 </Card>
             </Link>
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="./images/created-brew.jpg"
-                        title="Homebrew Created Brews"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            My Created Brews
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            {/* All data on the brews you have created. Bottling day, beer name, 
-                            and brew style can be found here. */}
-                            *** COMING SOON ***
-                            <br></br>
-                            <br></br>
-                            Construction in progress
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
+            <Link to="/created">
+                <Card className={classes.root}>
+                    <CardActionArea>
+                        <CardMedia
+                            className={classes.media}
+                            image="./images/created-brew.jpg"
+                            title="Homebrew Created Brews"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                My Created Brews
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                {/* All data on the brews you have created. Bottling day, beer name, 
+                                and brew style can be found here. */}
+                                *** COMING SOON ***
+                                <br></br>
+                                <br></br>
+                                Construction in progress
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+            </Link>
         </div>
     )
 } // end Dashboard
