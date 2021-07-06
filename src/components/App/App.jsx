@@ -25,6 +25,7 @@ import HomebrewRecipes from '../HomebrewRecipes/HomebrewRecipes';
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
 import NewRecipe from '../NewRecipe/NewRecipe';
 import EditRecipe from '../EditRecipe/EditRecipe';
+import CreatedBrew from '../CreatedBrew/CreatedBrew';
 
 import './App.css';
 
@@ -97,6 +98,13 @@ function App() {
             path="/edit"
           >
             <EditRecipe />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/created"
+          >
+            <CreatedBrew />
           </ProtectedRoute>
 
           <ProtectedRoute
