@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
@@ -55,9 +57,9 @@ function SuppliesPage() {
                             Homebrew Starter Kit
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            The Siphonless Craft Beer Making Kit is for anyone that enjoys craft beer,
+                            The Siphon-less Craft Beer Making Kit is for anyone that enjoys craft beer,
                             has a streak of DIY gumption, and wants a complete kit with a simplified method of beer making.
-                            We’ve made our Little Big Mouth Bubbler fermenter siphonless, reducing the tools needed and
+                            We’ve made our Little Big Mouth Bubbler fermenter siphon-less, reducing the tools needed and
                             some complexity in the brewing process. Meaning you’ll have an easier and better experience
                             making your first batch.
                         </Typography>
@@ -88,7 +90,7 @@ function SuppliesPage() {
                         <Typography variant="body2" color="textSecondary" component="p">
                         Stainless two-gallon brew kettle is budget friendly and ideal for brewing small batches of beer. 
                         We recommend this kettle for use with the Northern Brewer 1 Gallon Craft Beer Making Kit. This 
-                        kettle is compatible with all cooktops, and it is great for beginners! The quality stainless steel 
+                        kettle is compatible with all cook-tops, and it is great for beginners! The quality stainless steel 
                         lasts a lifetime and is safe and non-reactive. 
                         </Typography>
                     </CardContent>
