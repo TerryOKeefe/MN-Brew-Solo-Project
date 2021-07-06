@@ -70,9 +70,9 @@ function HomebrewRecipes() {
     } // end handleDelete
 
     // function to direct user to purchase page
-    const routeChange = () => {
+    const routeChange = (link) => {
         // on click new window opens
-        window.open('https://www.northernbrewer.com/collections/small-batch-kits/products/summer-squeeze-lemon-shandy-one-gallon-recipe-kit');
+        window.open(link);
     } // end routeChange    
 
     // load once and dispatch fetch_recipes
@@ -134,7 +134,7 @@ function HomebrewRecipes() {
                                             size="small"
                                             color="primary"
                                             variant="outlined"
-                                            onClick={routeChange}
+                                            onClick={() => routeChange(recipe.purchase_link)}
                                         >
                                             Buy Kit
                                     </Button>

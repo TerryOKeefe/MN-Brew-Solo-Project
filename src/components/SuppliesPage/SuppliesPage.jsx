@@ -45,8 +45,9 @@ function SuppliesPage() {
 
     // function to open new tab and take to route
     const routeChange = (link) => {
+        // open new tab to take user to purchase link
         window.open(link);
-    }
+    } // end routeChange
 
     // dispatch 'FETCH_SUPPLIES' and load once
     useEffect(() => {
