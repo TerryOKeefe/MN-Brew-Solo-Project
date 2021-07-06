@@ -1,4 +1,3 @@
-import { put } from '@redux-saga/core/effects';
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
