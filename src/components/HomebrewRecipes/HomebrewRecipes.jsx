@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
+import HopsLogo from '../HopsLogo/HopsLogo';
 
 // setup material-ui style
 const useStyles = makeStyles({
@@ -82,14 +83,17 @@ function HomebrewRecipes() {
 
     return (
         <div>
-            <div>
-                <h1>Select A Brew To Make</h1>
+            <div className="dashboard-head">
+                <h1>Select A Recipe</h1>
+            </div>
+            <div className="hop-logo">
+                <HopsLogo />
             </div>
             <div>
                 {recipes.map((recipe) => {
                     return (
                         <Card 
-                            style={{backgroundColor: "lightgrey"}}
+                            // style={{backgroundColor: "lightgrey"}}
                             className={classes.root} 
                             key={recipe.id}>
                             <CardActionArea>

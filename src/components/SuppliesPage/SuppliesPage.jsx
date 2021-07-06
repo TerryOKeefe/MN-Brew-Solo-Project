@@ -9,6 +9,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import HopsLogo from '../HopsLogo/HopsLogo';
 
 // setup material-ui style
 const useStyles = makeStyles({
@@ -56,8 +57,11 @@ function SuppliesPage() {
 
     return (
         <div>
-            <div>
+            <div className="component-head">
                 <h1>Supplies</h1>
+            </div>
+            <div className="hop-logo">
+                <HopsLogo />
             </div>
             <div>
                 {supplies.map((supply) => {

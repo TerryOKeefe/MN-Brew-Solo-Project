@@ -110,3 +110,15 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+.component-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hop-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

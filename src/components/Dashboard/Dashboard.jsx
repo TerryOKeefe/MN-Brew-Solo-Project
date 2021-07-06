@@ -40,7 +40,7 @@ function Dashboard() {
 
     return (
         <div>
-            <div className="dashboard-head">
+            <div className="component-head">
                 <h1>Welcome, {user.username}!</h1>
             </div>
             <div className="hop-logo">

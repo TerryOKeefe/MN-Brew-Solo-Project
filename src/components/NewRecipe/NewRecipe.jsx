@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import HopsLogo from '../HopsLogo/HopsLogo';
 
 // function to add new recipe
 function NewRecipe() {
@@ -52,8 +53,11 @@ function NewRecipe() {
 
     return (
         <div>
-            <div>
+            <div className="component-head">
                 <h1>Add New Recipe</h1>
+            </div>
+            <div className="hop-logo">
+                <HopsLogo />
             </div>
             <form>
                 <div>

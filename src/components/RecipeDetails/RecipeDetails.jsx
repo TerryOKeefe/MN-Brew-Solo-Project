@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
@@ -26,9 +27,32 @@ function RecipeDetails() {
     const history = useHistory();
 
     // get details from the redux store 
-    const details = useSelector(store => store.details)
+    const details = useSelector(store => store.details);
     // console log to see data from redux store
     console.log('Details:', details);
+
+    const [created, setCreated] = useState({
+        name: '',
+        style: '',
+        notes: '',
+        date: '',
+        user_id: null
+    });
+
+    // function to set new values for created brew
+    const handleInputs = (key, value) => {
+        // set created object with key and values from form
+        setCreated({...created,
+        [key]: value,
+        });
+    };
+
+    // function to handleSubmit
+    const handleSubmit = (event) => {
+        console.log(created);
+        // dispatch created to 'SET_CREATED'
+        dispatch({ type: 'SET_CREATED', payload: created});
+    }
 
     const handleClick = (detail) => {
         // console log to see data passed in
@@ -91,24 +115,39 @@ function RecipeDetails() {
                             <div>
                                 <h2>Brewer's Notes</h2>
                                 <h4>{detail.notes}</h4>
+                            </div>
+                            <form 
+                                className={classes.container} 
+                                noValidate
+                                onSubmit={handleSubmit}
+                                >
+                                <input 
+                                    type="text" 
+                                    placeholder="name"
+                                    onChange={(event) => handleInputs('name', event.target.value)}
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="style"
+                                    onChange={(event) => handleInputs('style', event.target.value)}
+                                />
                                 <textarea
                                     placeholder="notes"
-
+                                    onChange={(event) => handleInputs('notes', event.target.value)}
                                 ></textarea>
-                            </div>
-                            <div>
-                                <button>Add Notes</button>
-                            </div>
-                            <form className={classes.container} noValidate>
                                 <TextField
                                     id="date"
                                     label="Select Bottle Day"
                                     type="date"
                                     className={classes.textField}
+                                    onChange={(event) => handleInputs('date', event.target.value)}
                                     InputLabelProps={{
                                         shrink: true,
                                     }}
                                 />
+                                
+                                    <button type="submit" />
+                    
                             </form>
                         </div>
                     )
