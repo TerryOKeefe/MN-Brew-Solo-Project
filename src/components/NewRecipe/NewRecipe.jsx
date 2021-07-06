@@ -34,7 +34,7 @@ function NewRecipe() {
         // set recipe object with key and values from form
         setRecipe({...recipe,
         [key]: value,
-        })
+        });
     } // end handleInputs
 
     const handleClick = (event) => {

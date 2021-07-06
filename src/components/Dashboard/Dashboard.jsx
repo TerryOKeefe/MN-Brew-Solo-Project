@@ -34,7 +34,7 @@ function Dashboard() {
 
     // import classes/styles from material-ui
     const classes = useStyles();
-
+    // get user from redux store
     const user = useSelector((store) => store.user);
 
     return (
