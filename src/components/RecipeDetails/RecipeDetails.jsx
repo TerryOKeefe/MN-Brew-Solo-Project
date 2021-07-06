@@ -51,7 +51,7 @@ function RecipeDetails() {
     const handleSubmit = (event) => {
         console.log(created);
         // dispatch created to 'SET_CREATED'
-        dispatch({ type: 'SET_CREATED', payload: created});
+        dispatch({ type: 'ADD_CREATED', payload: created});
     }
 
     const handleClick = (detail) => {
