@@ -6,7 +6,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* fetchSupplies() {
     // get all supplies from Database 
     try {
-
+        const supplies = yield axios.get()
     } catch {
         // console log any errors
         console.log('Error in supplies saga');
