@@ -1,7 +1,7 @@
 import './Dashboard.css';
 import { Link } from 'react-router-dom';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -9,6 +9,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import HopsLogo from '../HopsLogo/HopsLogo';
 
 // setup material-ui style
 const useStyles = makeStyles({
@@ -41,8 +42,12 @@ function Dashboard() {
         <div>
             <div className="dashboard-head">
                 <h1>Welcome, {user.username}!</h1>
-                <img src="./images/hops.png" alt="Image of Hops" />
             </div>
+            <div className="hop-logo">
+                <HopsLogo />
+            </div>
+
+
             <Link to="/supplies">
                 <Card className={classes.root}>
                     <CardActionArea>
@@ -56,7 +61,7 @@ function Dashboard() {
                                 Supplies
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                General brewing supplies needed to get started. 
+                                General brewing supplies needed to get started.
                                 These supplies are for small batch brewing 1-2 gallons.
                             </Typography>
                         </CardContent>
@@ -76,7 +81,7 @@ function Dashboard() {
                                 Homebrew Recipes
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Collection of recipes to get you started. Select a recipe that 
+                                Collection of recipes to get you started. Select a recipe that
                                 corresponds to the kit you purchased.
                             </Typography>
                         </CardContent>
@@ -96,7 +101,7 @@ function Dashboard() {
                                 Add New Recipe
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Want to add a new recipe to your collection? 
+                                Want to add a new recipe to your collection?
                                 Select add new recipe to begin.
                             </Typography>
                         </CardContent>
