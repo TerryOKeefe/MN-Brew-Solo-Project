@@ -4,6 +4,7 @@ import user from './user.reducer';
 import recipe from './recipe.reducer';
 import details from './details.reducer';
 import edit from './edit.reducer';
+import supplies from './supplies.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   recipe,
   details,
   edit,
+  supplies,
 });
 
 export default rootReducer;

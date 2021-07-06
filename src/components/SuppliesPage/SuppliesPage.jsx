@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
@@ -33,192 +35,62 @@ function SuppliesPage() {
     // import classes/styles from material-ui
     const classes = useStyles();
 
+    // set dispatch variable
+    const dispatch = useDispatch();
+
+    // get supplies from redux store
+    const supplies = useSelector(store => store.supplies);
+    // console log supplies from store
+    console.log('Supplies:', supplies);
+
     // function to open new tab and take to route
-    const routeChange = () => {
-       window.open('https://www.northernbrewer.com/products/craft-beer-making-kit-with-siphonless-fermenter-1-gallon');
+    const routeChange = (link) => {
+        window.open(link);
     }
+
+    // dispatch 'FETCH_SUPPLIES' and load once
+    useEffect(() => {
+        dispatch({ type: 'FETCH_SUPPLIES' });
+    }, []);
 
     return (
         <div>
             <div>
                 <h1>Supplies</h1>
             </div>
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="images/homebrew-starter.jpg"
-                        title="Homebrew Starter"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Homebrew Starter Kit
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            The Siphonless Craft Beer Making Kit is for anyone that enjoys craft beer,
-                            has a streak of DIY gumption, and wants a complete kit with a simplified method of beer making.
-                            We’ve made our Little Big Mouth Bubbler fermenter siphonless, reducing the tools needed and
-                            some complexity in the brewing process. Meaning you’ll have an easier and better experience
-                            making your first batch.
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button 
-                    size="small" 
-                    variant="outlined" 
-                    color="primary"
-                    onClick={routeChange}
-                    >
-                        Purchase
-                    </Button>
-                </CardActions>
-            </Card>
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="images/kettle.jpg"
-                        title="Homebrew Kettle"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            2 Gallon Stainless Kettle
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                        Stainless two-gallon brew kettle is budget friendly and ideal for brewing small batches of beer. 
-                        We recommend this kettle for use with the Northern Brewer 1 Gallon Craft Beer Making Kit. This 
-                        kettle is compatible with all cooktops, and it is great for beginners! The quality stainless steel 
-                        lasts a lifetime and is safe and non-reactive. 
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button 
-                    size="small" 
-                    variant="outlined" 
-                    color="primary"
-                    >
-                        Purchase
-                    </Button>
-                </CardActions>
-            </Card>
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="images/bottles.jpg"
-                        title="Homebrew Bottles"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            12 oz. Beer Bottles
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                        You don’t always need a whole bunch of bottles when you’re making beer. 
-                        So, we made a 12 pack of bottles for anyone that is brewing a 1 gallon batch, 
-                        bottling up a few for a party, or for someone who just needs a couple extra 
-                        bottles for their next brew. 
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button 
-                    size="small" 
-                    variant="outlined" 
-                    color="primary"
-                    >
-                        Purchase
-                    </Button>
-                </CardActions>
-            </Card>
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="images/sanitizer.jpg"
-                        title="Homebrew Sanitizer"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Star San Sanitizer
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                        Our favorite sanitizer! Star San is an acid-based no-rinse sanitizer that 
-                        is effective and easy to use.
-                        Made from food-grade phosphoric acid, safe for people and the environment.
-                        Star San is self-foaming, which helps it to penetrate cracks and crevices.
-                        Odorless and flavorless, no need to worry about tainting your beer or wine.
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button 
-                    size="small" 
-                    variant="outlined" 
-                    color="primary"
-                    >
-                        Purchase
-                    </Button>
-                </CardActions>
-            </Card>
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="images/auto-siphon.jpg"
-                        title="Homebrew Auto Siphon"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Auto Siphon
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                        One stroke of the racking cane/piston assembly will start a siphon when immersed 
-                        in as little as six inches of beer or wine; less than six inches may require a second stroke.
-                        Includes a removable diverter tip to minimize sediment pickup. Plastic construction; can be 
-                        disassembled for cleaning. 
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button 
-                    size="small" 
-                    variant="outlined" 
-                    color="primary"
-                    >
-                        Purchase
-                    </Button>
-                </CardActions>
-            </Card>
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="images/thermometer.png"
-                        title="Homebrew Thermometer"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Large Dial Thermometer
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                        Large, easy-to-read with 1.75" face, 8" probe. Metal clip attaches to the lip of a kettle 
-                        or mash tun for constant readings. Stainless steel, temperature range of 30-220 degrees Fahrenheit. 
-                        Does not display in Celsius. This is the type of thermometer usually used to froth/steam milk.
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button 
-                    size="small" 
-                    variant="outlined" 
-                    color="primary"
-                    >
-                        Purchase
-                    </Button>
-                </CardActions>
-            </Card>
+            <div>
+                {supplies.map((supply) => {
+                    return (
+                        <Card className={classes.root}>
+                            <CardActionArea>
+                                <CardMedia
+                                    className={classes.media}
+                                    image={supply.image_url}
+                                    title={supply.name}
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        {supply.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        {supply.description}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            <CardActions>
+                                <Button
+                                    size="small"
+                                    variant="outlined"
+                                    color="primary"
+                                    onClick={() => routeChange(supply.purchase_link)}
+                                >
+                                    Purchase
+                                </Button>
+                            </CardActions>
+                        </Card>
+                    )
+                })}
+            </div>
         </div>
     )
 } // end SuppliesPage
