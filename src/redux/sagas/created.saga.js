@@ -14,8 +14,20 @@ function* createdBrew(action) {
     }
 } // end createdBrew
 
+function* fetchBrew() {
+    // get all created brew from database
+    try {
+        const created = yield axios.get('/api/created');
+        // console log to see data
+        yield put({ type: 'SET_CREATED', payload: created.data });
+    } catch {
+        console.log('Error in fetchBrew saga');
+    }
+}
+
 function* createdSaga() {
     yield takeLatest('ADD_CREATED', createdBrew);
+    yield takeLatest('FETCH_CREATED', fetchBrew);
 } // end createdSaga
 
 // export createdSaga
