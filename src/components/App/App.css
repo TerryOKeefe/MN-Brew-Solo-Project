@@ -122,3 +122,9 @@ input {
   align-items: center;
   justify-content: center;
 }
+
+.email-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

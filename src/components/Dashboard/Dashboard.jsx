@@ -9,6 +9,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import HopsLogo from '../HopsLogo/HopsLogo';
+import Email from '../Email/Email';
 
 // setup material-ui style
 const useStyles = makeStyles({
@@ -127,6 +128,9 @@ function Dashboard() {
                     </CardActionArea>
                 </Card>
             </Link>
+            <div className="email-btn">
+                <Email />
+            </div>
         </div>
     )
 } // end Dashboard
