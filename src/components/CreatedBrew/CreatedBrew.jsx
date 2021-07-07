@@ -7,11 +7,13 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import moment from 'moment';
 
 // setup material-ui style
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
+        marginBottom: 20,
     },
     heading: {
         fontSize: theme.typography.pxToRem(15),
@@ -64,8 +66,16 @@ function CreatedBrew() {
                                     >
                                         {create.name}
                                     </Typography>
-                                    <Typography className={classes.secondaryHeading}>{create.style}</Typography>
-                                    <Typography className={classes.secondaryHeading}>{create.date}</Typography>
+                                    <Typography 
+                                        className={classes.secondaryHeading}
+                                    >
+                                        {create.style}
+                                    </Typography>
+                                    <Typography 
+                                        className={classes.secondaryHeading}
+                                    >
+                                        {moment(create.date).format("LL")}
+                                    </Typography>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Typography>

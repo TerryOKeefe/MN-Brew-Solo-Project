@@ -52,6 +52,9 @@ function RecipeDetails() {
         console.log(created);
         // dispatch created to 'SET_CREATED'
         dispatch({ type: 'ADD_CREATED', payload: created});
+
+        // navigate to created brew page
+        history.push('/created');
     }
 
     const handleClick = (detail) => {
@@ -146,7 +149,7 @@ function RecipeDetails() {
                                     }}
                                 />
                                 
-                                    <button type="submit" />
+                                    <button type="submit">Submit</button>
                     
                             </form>
                         </div>
