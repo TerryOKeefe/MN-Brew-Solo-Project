@@ -11,10 +11,12 @@ function Email() {
     // set local state for dialog action
     const [open, setOpen] = useState(false);
 
+    // function to open window on click
     const handleClickOpen = () => {
         setOpen(true);
     };
 
+    // function to close window on click
     const handleClose = () => {
         setOpen(false);
     };
