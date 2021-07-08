@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import HopsLogo from '../HopsLogo/HopsLogo';
 
 function EditRecipe() {
     
@@ -39,10 +40,16 @@ function EditRecipe() {
 
     return (
         <div>
-            <div>
+            <div className="component-head">
                 <h1>Edit Recipe</h1>
             </div>
-            <form onSubmit={handleSubmit}>
+            <div className="hop-logo">
+                <HopsLogo />
+            </div>
+            <form
+                className="edit-form" 
+                onSubmit={handleSubmit}
+            >
                 <div>
                     <input
                         name="name"
