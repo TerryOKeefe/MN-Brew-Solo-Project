@@ -1,13 +1,18 @@
+import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import HopsLogo from '../HopsLogo/HopsLogo';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import EditIcon from '@material-ui/icons/Edit';
 
 const useStyles = makeStyles((theme) => ({
     container: {
         display: 'flex',
         flexWrap: 'wrap',
+        width: 200,
     },
     textField: {
         marginLeft: theme.spacing(1),
@@ -70,88 +75,108 @@ function RecipeDetails() {
 
     return (
         <div>
-            <h1>Recipe Details</h1>
+            <div className="component-head">
+                <h1>Recipe Details</h1>
+            </div>
+            <div className="hop-logo">
+                <HopsLogo />
+            </div>
             <section>
                 {details.map(detail => {
                     return (
                         <div>
-                            <div>
-                                <button
-                                    onClick={() => handleClick(detail)}
-                                >Edit</button>
-                                <img src={detail.image} />
+                            <div className="details-image">
+                                <div>
+                                    <img src={detail.image} />
+                                </div>
+                                <div className="details-form">
+                                    <h2>Create Brew</h2>
+                                    <form 
+                                        className={classes.container} 
+                                        noValidate
+                                        onSubmit={handleSubmit}
+                                        >
+                                        <TextField 
+                                            type="text"
+                                            variant="outlined" 
+                                            placeholder="name"
+                                            onChange={(event) => handleInputs('name', event.target.value)}
+                                        />
+                                        <TextField
+                                            type="text"
+                                            variant="outlined"
+                                            placeholder="style"
+                                            onChange={(event) => handleInputs('style', event.target.value)}
+                                        />
+                                        <TextField
+                                            placeholder="notes"
+                                            variant="outlined"
+                                            onChange={(event) => handleInputs('notes', event.target.value)}
+                                        />
+                                        <TextField
+                                            id="date"
+                                            label="Select Bottle Day"
+                                            type="date"
+                                            className={classes.textField}
+                                            onChange={(event) => handleInputs('date', event.target.value)}
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                        />
+                                        
+                                            <Button 
+                                                type="submit"
+                                                variant="outlined"
+                                                color="primary"
+                                            >
+                                                Submit
+                                            </Button>
+                                    </form>
+                                </div>
                             </div>
-                            <div>
-                                <h1>{detail.name}</h1>
-                                <h3>{detail.style}</h3>
+                            <div className="brew-details">
+                                <div>
+                                    <h1>{detail.name}</h1>
+                                    <Button
+                                        variant="outlined"
+                                        onClick={() => handleClick(detail)}
+                                        endIcon={<EditIcon />}
+                                    >
+                                        Edit
+                                    </Button>
+                                    <h3>{detail.style}</h3>
+                                </div>
+                                <div>
+                                    <h4>{detail.intro}</h4>
+                                </div>
+                                <div>
+                                    <h4>Original Gravity: {detail.original_gravity}</h4>
+                                    <h4>Brew Time: {detail.ferment_time} | {detail.bottle_time}</h4>
+                                </div>
+                                <div>
+                                    <h2>Kit Inventory:</h2>
+                                    <h4>{detail.malt_extract}</h4>
+                                    <h4>{detail.hops}</h4>
+                                    <h4>{detail.yeast}</h4>
+                                    <h4>{detail.priming_sugar}</h4>
+                                </div>
+                                <div>
+                                    <h2>Brewing Day Instructions</h2>
+                                    <h4>{detail.brew_day}</h4>
+                                </div>
+                                <div>
+                                    <h2>Fermentation</h2>
+                                    <h4>{detail.fermentation}</h4>
+                                </div>
+                                <div>
+                                    <h2>Bottling Day</h2>
+                                    <h4>{detail.bottling}</h4>
+                                </div>
+                                <div>
+                                    <h2>Conditioning</h2>
+                                    <h4>{detail.conditioning}</h4>
+                                </div>
                             </div>
-                            <div>
-                                <h4>{detail.intro}</h4>
-                            </div>
-                            <div>
-                                <h4>Original Gravity: {detail.original_gravity}</h4>
-                                <h4>Brew Time: {detail.ferment_time} | {detail.bottle_time}</h4>
-                            </div>
-                            <div>
-                                <h2>Kit Inventory:</h2>
-                                <h4>{detail.malt_extract}</h4>
-                                <h4>{detail.hops}</h4>
-                                <h4>{detail.yeast}</h4>
-                                <h4>{detail.priming_sugar}</h4>
-                            </div>
-                            <div>
-                                <h2>Brewing Day Instructions</h2>
-                                <h4>{detail.brew_day}</h4>
-                            </div>
-                            <div>
-                                <h2>Fermentation</h2>
-                                <h4>{detail.fermentation}</h4>
-                            </div>
-                            <div>
-                                <h2>Bottling Day</h2>
-                                <h4>{detail.bottling}</h4>
-                            </div>
-                            <div>
-                                <h2>Conditioning</h2>
-                                <h4>{detail.conditioning}</h4>
-                            </div>
-                            <div>
-                                <h2>Brewer's Notes</h2>
-                                <h4>{detail.notes}</h4>
-                            </div>
-                            <form 
-                                className={classes.container} 
-                                noValidate
-                                onSubmit={handleSubmit}
-                                >
-                                <input 
-                                    type="text" 
-                                    placeholder="name"
-                                    onChange={(event) => handleInputs('name', event.target.value)}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="style"
-                                    onChange={(event) => handleInputs('style', event.target.value)}
-                                />
-                                <textarea
-                                    placeholder="notes"
-                                    onChange={(event) => handleInputs('notes', event.target.value)}
-                                ></textarea>
-                                <TextField
-                                    id="date"
-                                    label="Select Bottle Day"
-                                    type="date"
-                                    className={classes.textField}
-                                    onChange={(event) => handleInputs('date', event.target.value)}
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                />
-                                
-                                    <button type="submit">Submit</button>
-                    
-                            </form>
                         </div>
                     )
                 })}

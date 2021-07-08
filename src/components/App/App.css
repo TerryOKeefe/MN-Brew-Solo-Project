@@ -130,8 +130,24 @@ input {
 }
 
 .container {
-  font-size: -large;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.brew-details {
+  width: 50%;
+  float: left;
+}
+
+.details-image {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  float: left;
+}
+
+.details-form {
+  
 }
