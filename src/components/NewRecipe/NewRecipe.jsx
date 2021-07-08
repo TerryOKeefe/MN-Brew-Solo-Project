@@ -2,9 +2,22 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import HopsLogo from '../HopsLogo/HopsLogo';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+import { Button } from '@material-ui/core';
+
+// setup styles for material-ui
+const useStyles = makeStyles((theme) => ({
+    container: {
+        margin: theme.spacing(1),
+    },
+})); // end useStyles
 
 // function to add new recipe
 function NewRecipe() {
+
+    // variable for material-ui classes
+    const classes = useStyles();
 
     // setup dispatch and history variables
     const dispatch = useDispatch();
@@ -101,142 +114,225 @@ function NewRecipe() {
             >
                 <HopsLogo />
             </div>
-            <form>
-                <div>
+            <form className="edit-form" >
+                <div className={classes.container}>
                     <h2>Brew Name & Style</h2>
-                    <input
+                    <TextField
                         type="text"
                         placeholder="Brew Name"
                         value={recipe.name}
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('name', event.target.value)}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Style"
-                        value={recipe.style}
-                        onChange={(event) => handleInputs('style', event.target.value)}
                     />
                 </div>
                 <div>
+                    <TextField
+                        type="text"
+                        placeholder="Style"
+                        value={recipe.style}
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
+                        onChange={(event) => handleInputs('style', event.target.value)}
+                    />
+                </div>
+                <div className={classes.container}>
                     <h2>Image & Purchase of Kit</h2>
-                    <input
+                    <TextField
                         type="text"
                         placeholder="Image URL"
                         value={recipe.image}
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('image', event.target.value)}
                     />
-                    <input
+                </div>
+                <div>
+                    <TextField
                         type="text"
                         value={recipe.purchase_link}
                         placeholder="Purchase Link"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('purchase_link', event.target.value)}
                     />
                 </div>
                 <div>
                     <h2>Starting Gravity</h2>
-                    <input
+                    <TextField
                         type="number"
                         value={recipe.original_gravity}
                         placeholder="Original Gravity"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('original_gravity', event.target.value)}
                     />
                 </div>
-                <div>
+                <div className={classes.container}>
                     <h2>Fermentation & Bottling Time</h2>
-                    <input
+                    <TextField
                         type="text"
                         value={recipe.ferment_time}
                         placeholder="Fermentation Time"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('ferment_time', event.target.value)}
-                    />
-                    <input
-                        type="text"
-                        value={recipe.bottle_time}
-                        placeholder="Bottling Time"
-                        onChange={(event) => handleInputs('bottle_time', event.target.value)}
                     />
                 </div>
                 <div>
+                    <TextField
+                        type="text"
+                        value={recipe.bottle_time}
+                        placeholder="Bottling Time"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
+                        onChange={(event) => handleInputs('bottle_time', event.target.value)}
+                    />
+                </div>
+                <div className={classes.container}>
                     <h2>Ingredients</h2>
-                    <input
+                    <TextField
                         type="text"
                         value={recipe.malt_extract}
                         placeholder="Malt Extract"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('malt_extract', event.target.value)}
                     />
-                    <input
+                </div>
+                <div className={classes.container}>
+                    <TextField
                         type="text"
                         value={recipe.hops}
                         placeholder="Hops"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('hops', event.target.value)}
                     />
-                    <input
+                </div>
+                <div className={classes.container}>
+                    <TextField
                         type="text"
                         value={recipe.yeast}
                         placeholder="Yeast"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('yeast', event.target.value)}
                     />
-                    <input
+                </div>
+                <div>
+                    <TextField
                         type="text"
                         value={recipe.priming_sugar}
                         placeholder="Priming Sugar"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('priming_sugar', event.target.value)}
                     />
                 </div>
                 <div>
                     <h2>Description of Brew</h2>
-                    <textarea
+                    <TextField
                         type="text"
                         value={recipe.intro}
                         placeholder="Intro"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('intro', event.target.value)}
                     />
                 </div>
                 <div>
                     <h2>Brew Day Instructions</h2>
-                    <textarea
+                    <TextField
                         type="text"
                         value={recipe.brew_day}
                         placeholder="Brew Day Instructions"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('brew_day', event.target.value)}
                     />
                 </div>
                 <div>
                     <h2>Fermentation Instructions</h2>
-                    <textarea
+                    <TextField
                         type="text"
                         value={recipe.fermentation}
                         placeholder="Fermentation Instructions"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('fermentation', event.target.value)}
                     />
                 </div>
                 <div>
                     <h2>Bottling Instructions</h2>
-                    <textarea
+                    <TextField
                         type="text"
                         value={recipe.bottling}
                         placeholder="Bottling Instructions"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('bottling', event.target.value)}
                     />
                 </div>
                 <div>
                     <h2>Bottle Conditioning Instructions</h2>
-                    <textarea
+                    <TextField
                         type="text"
                         value={recipe.conditioning}
                         placeholder="Conditioning Instructions"
+                        size="small"
+                        multiline={true}
+                        style={{ width: 500 }}
+                        variant="outlined"
                         onChange={(event) => handleInputs('conditioning', event.target.value)}
                     />
                 </div>
                 <div>
                     <Link to="/dashboard">
-                        <button>Cancel</button>
+                        <Button
+                            variant="outlined"
+                            color="secondary"
+                        >
+                            Cancel
+                        </Button>
                     </Link>
-                    <button
+                    <Button
+                        variant="outlined"
+                        color="primary"
                         onClick={handleClick}
                     >
                         Submit Brew
-                    </button>
+                    </Button>
                 </div>
             </form>
         </div>

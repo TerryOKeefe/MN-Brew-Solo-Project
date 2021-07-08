@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import HopsLogo from '../HopsLogo/HopsLogo';
 import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 
@@ -11,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     container: {
       margin: theme.spacing(1),
     },
-  })); // end useStyles
+})); // end useStyles
 
 function EditRecipe() {
 
