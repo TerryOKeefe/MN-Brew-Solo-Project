@@ -136,15 +136,19 @@ input {
 }
 
 .brew-details {
-  width: 50%;
+  width: 47%;
   float: left;
+}
+
+.details-form {
+  margin-left: 200px
 }
 
 .details-image {
   display: block;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 51%;
   float: left;
 }
 
