@@ -128,3 +128,10 @@ input {
   align-items: center;
   justify-content: center;
 }
+
+.container {
+  font-size: -large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
