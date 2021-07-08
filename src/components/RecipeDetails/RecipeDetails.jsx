@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
         width: 200,
     },
     textField: {
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1),
+        marginBottom: theme.spacing(1),
+        
         width: 200,
     },
 }));
@@ -100,23 +100,30 @@ function RecipeDetails() {
                                             type="text"
                                             variant="outlined" 
                                             placeholder="name"
+                                            multiline={true}
+                                            className={classes.textField}
                                             onChange={(event) => handleInputs('name', event.target.value)}
                                         />
                                         <TextField
                                             type="text"
                                             variant="outlined"
                                             placeholder="style"
+                                            multiline={true}
+                                            className={classes.textField}
                                             onChange={(event) => handleInputs('style', event.target.value)}
                                         />
                                         <TextField
                                             placeholder="notes"
                                             variant="outlined"
+                                            multiline={true}
+                                            className={classes.textField}
                                             onChange={(event) => handleInputs('notes', event.target.value)}
                                         />
                                         <TextField
                                             id="date"
                                             label="Select Bottle Day"
                                             type="date"
+                                            multiline={true}
                                             className={classes.textField}
                                             onChange={(event) => handleInputs('date', event.target.value)}
                                             InputLabelProps={{
@@ -127,6 +134,7 @@ function RecipeDetails() {
                                                 type="submit"
                                                 variant="outlined"
                                                 color="primary"
+                                                className={classes.textField}
                                             >
                                                 Submit
                                             </Button>
