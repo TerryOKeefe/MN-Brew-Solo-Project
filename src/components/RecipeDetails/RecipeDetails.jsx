@@ -76,7 +76,7 @@ function RecipeDetails() {
     return (
         <div>
             <div className="component-head">
-                <h1>Recipe Details</h1>
+                <h1>Recipe Instructions</h1>
             </div>
             <div className="hop-logo">
                 <HopsLogo />
@@ -123,7 +123,6 @@ function RecipeDetails() {
                                                 shrink: true,
                                             }}
                                         />
-                                        
                                             <Button 
                                                 type="submit"
                                                 variant="outlined"
@@ -136,7 +135,7 @@ function RecipeDetails() {
                             </div>
                             <div className="brew-details">
                                 <div>
-                                    <h1>{detail.name}</h1>
+                                    <h2>{detail.name}</h2>
                                     <Button
                                         variant="outlined"
                                         onClick={() => handleClick(detail)}
@@ -144,7 +143,7 @@ function RecipeDetails() {
                                     >
                                         Edit
                                     </Button>
-                                    <h3>{detail.style}</h3>
+                                    <h2>{detail.style}</h2>
                                 </div>
                                 <div>
                                     <h4>{detail.intro}</h4>
