@@ -109,14 +109,11 @@ function HomebrewRecipes() {
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {recipe.style}
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        created by {recipe.username}
-                                    </Typography>
                                     <Box component="fieldset" mb={1} borderColor="transparent">
                                         <Typography component="legend"></Typography>
                                         <Rating
                                             name="simple-controlled"
-                                            value={value}
+                                            value={recipe.rating}
                                             onChange={(event, newValue) => {
                                                 setValue(newValue);
                                             }}
