@@ -19,8 +19,7 @@ function AboutPage() {
         <div>
           <ul>
             <li>React</li>
-            <li>Redux</li>
-            <li>Sagas</li>
+            <li>Redux-Saga</li>
             <li>Email.js</li>
             <li>Moment.js</li>
             <li>Node</li>
