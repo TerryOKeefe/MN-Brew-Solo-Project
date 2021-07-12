@@ -15,7 +15,7 @@ import HopsLogo from '../HopsLogo/HopsLogo';
 const useStyles = makeStyles({
     root: {
         minWidth: 100,
-        maxWidth: 450,
+        maxWidth: 400,
         margin: 10,
         display: "inline-block",
     },

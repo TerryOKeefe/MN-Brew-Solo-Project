@@ -16,7 +16,9 @@ const useStyles = makeStyles((theme) => ({
     },
     textField: {
         marginBottom: theme.spacing(1),
-        width: 200,
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
+        width: 200, 
     },
 }));
 
@@ -58,7 +60,7 @@ function RecipeDetails() {
         dispatch({ type: 'ADD_CREATED', payload: created});
 
         // navigate to created brew page
-        history.push('/created');
+        history.push('/dashboard');
     }
 
     const handleClick = (detail) => {
@@ -122,7 +124,6 @@ function RecipeDetails() {
                                             id="date"
                                             label="Select Bottle Day"
                                             type="date"
-                                            multiline={true}
                                             className={classes.textField}
                                             onChange={(event) => handleInputs('date', event.target.value)}
                                             InputLabelProps={{
