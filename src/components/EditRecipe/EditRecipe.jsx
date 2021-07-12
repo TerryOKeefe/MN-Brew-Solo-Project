@@ -51,6 +51,11 @@ function EditRecipe() {
         history.push('/recipes');
     } // end handleSubmit
 
+    const handleCancel = () => {
+        // navigate to recipes page
+        history.push('/recipes');
+    } // end handleCancel
+
     return (
         <div>
             <div className="component-head">
@@ -278,6 +283,7 @@ function EditRecipe() {
                     <Button
                         variant="outlined"
                         color="secondary"
+                        onClick={handleCancel}
                     >
                         Cancel
                     </Button>
