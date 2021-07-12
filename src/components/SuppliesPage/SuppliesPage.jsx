@@ -15,8 +15,13 @@ import HopsLogo from '../HopsLogo/HopsLogo';
 const useStyles = makeStyles({
     root: {
         minWidth: 100,
-        maxWidth: 300,
+        maxWidth: 450,
         margin: 10,
+        display: "inline-block",
+    },
+    card: {
+        margin: 10,
+        width: 400,
         display: "inline-block",
     },
     title: {
@@ -26,7 +31,7 @@ const useStyles = makeStyles({
         marginBottom: 12,
     },
     media: {
-        height: 140,
+        height: 200,
     },
 });
 
@@ -66,7 +71,7 @@ function SuppliesPage() {
             <div>
                 {supplies.map((supply) => {
                     return (
-                        <Card className={classes.root}>
+                        <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia
                                     className={classes.media}
